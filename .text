@@ -1,0 +1,75 @@
+<!-- all about text,color, andfont  -->
+<p class="red white--text text-capitalize" >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem quibusdam nisi excepturi veniam sequi unde quaerat reiciendis, itaque architecto! Dicta?</p>
+    <p class="pink lighten-4 red--text text--darken-5 text-md-right text--disabled ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium nulla sapiente facilis aliquam expedita beatae, facere itaque atque quibusdam magnam doloribus explicabo veniam nemo dolorum. Reiciendis repellendus odio explicabo? A!</p>
+    <p class="black blue--text text--darken-1 text-center text--primary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus perferendis placeat eos ad quis libero alias nihil cumque error perspiciatis, natus corporis excepturi voluptatibus architecto nobis magnam similique mollitia sunt et eveniet minus! Asperiores, commodi molestiae quo, hic modi alias recusandae consequatur voluptates velit aut assumenda! Dicta maxime at minima?</p>
+    <p class="indigo lighten-2 yellow--text text--darken-3 text-capitalize text-md-center font-weight-bold">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam numquam asperiores quo assumenda recusandae maiores deleniti suscipit? Saepe explicabo assumenda rem atque asperiores, nam minus dicta autem veritatis aperiam possimus!</p>
+    <p class="display-4 font-weight-bold text-uppercase">Massive Display</p>
+    <p class="display-1 font-weight-light text-lowercase">Massive Display</p>
+    <p class="headline font-italic text-decoration-line-through">Massive Display</p>
+    <p class="text-button">Massive Display</p>
+
+<!-- button and font-->
+ <v-btn class="green white--text">Click me</v-btn>
+     <v-btn depressed dark color="green" >Click me</v-btn><!--depressed untuk menghilangkan shadow di belakang btn-->
+     <v-btn large text color="pink">Click me</v-btn><!--text menghilangkan shadow dan color mengubah warna text dan background transparant -->
+     <v-btn depressed color="blue" dark><v-icon left>mdi-email</v-icon><span>Email me</span></v-btn>
+     <!-- left/right di gunakan untuk menentukan posisi icon -->
+     <v-btn depressed color="red" large dark><v-icon left>mdi-alert-circle</v-icon><span>Coution</span></v-btn>
+     <v-btn depressed color="green" text large ><span>Money</span><v-icon right large>mdi-currency-usd</v-icon></v-btn>    
+     <v-btn depressed color="pink" dark fab large><v-icon>mdi-heart</v-icon></v-btn>
+     <!-- fab di gunakan untuk mengubah bentuk btn menjadi bulat -->
+
+<!-- Breakpoints(Ukuran layar)-->
+<v-btn class="hidden-md-and-up">Click me</v-btn>
+<v-btn class="hidden-md-and-down">Click me</v-btn>
+<v-btn class="hidden-md-only">Click me</v-btn>
+
+<!-- grid and justify -->
+<v-container class="my-5">
+    <v-row>
+      <v-col cols="12" md="6">
+        <v-btn outlined block color="primary">1</v-btn>
+      </v-col>
+      <v-col cols="4" md="2">
+        <v-btn outlined block color="primary">2</v-btn>
+      </v-col>
+      <v-col cols="4" md="2">
+        <v-btn outlined block color="primary">2</v-btn>
+      </v-col>
+      <v-col cols="4" md="2">
+        <v-btn outlined block color="primary">2</v-btn>
+      </v-col>
+    </v-row>
+
+    <v-row justify="space-between">
+      <v-col cols="4" md="3">
+        <v-btn block color="success" outlined>1</v-btn>
+      </v-col>
+      <v-col cols="4" md="3">
+        <v-btn block color="success" outlined>1</v-btn>
+      </v-col>
+    </v-row>
+</v-container>
+
+<v-container class="my-5" v-for="project in projects" :key="project.title">
+    <v-card flat class="pa-3">
+       <v-row no-gutters>
+        <v-col cols="12" md="6">
+          <v-card-subtitle class="grey--text">Project</v-card-subtitle>
+          <v-card-text>{{project.title}}</v-card-text>
+        </v-col>
+        <v-col cols="6" sm="4" md="2" >
+          <v-card-subtitle class="grey--text">Person</v-card-subtitle>
+          <v-card-text>{{project.person}}</v-card-text>
+        </v-col>
+        <v-col cols="6" sm="4" md="2">
+          <v-card-subtitle class="grey--text">Due by</v-card-subtitle>
+          <v-card-text>{{project.due}}</v-card-text>
+        </v-col>
+        <v-col cols="6" sm="4" md="2">
+          <v-card-subtitle class="grey--text">Status</v-card-subtitle>
+          <v-card-text>{{project.status}}</v-card-text>
+        </v-col>
+       </v-row>
+    </v-card>
+</v-container>
